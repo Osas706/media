@@ -10,7 +10,6 @@ const ChannelDetail = () => {
 
   const [channelDetail, setChannelDetail] = useState(null);
   const [videos, setVideos] = useState([]);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -41,4 +40,4 @@ const ChannelDetail = () => {
   )
 }
 
-export default ChannelDetail
+export default ChannelDetail;
