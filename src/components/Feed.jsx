@@ -11,7 +11,11 @@ const Feed = () => {
 
   useEffect(() => {
     fetchFromApi(`search?part=snippet&q=${selectedCategory}`)
-      .then((data) => {setVideos(data.items)});
+    .then((data) => {
+      console.log(data)
+      setVideos(data.items)
+    
+    });
   }, [selectedCategory])
 
   return (
@@ -30,7 +34,7 @@ const Feed = () => {
        <Typography 
          className='copyright' 
          variant='body2' 
-         sx={{ mt: 1.5, color : '#fff'}}
+         sx={{ mt: 2, color : '#fff'}}
         >
          Copyright 2024 Winn Media
        </Typography>
@@ -46,7 +50,7 @@ const Feed = () => {
         {selectedCategory} <span style={{color : '#531503'}}>Videos</span>
       </Typography>
 
-      <Videos videos={[videos]} />
+      <Videos videos={videos} />
      </Box>
    </Stack>
   )
